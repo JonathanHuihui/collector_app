@@ -6,3 +6,19 @@ services:
 
   db:
     build: ./postgres
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-q", "-d", "postgres", "-U", "root" ]
+      timeout: 45s
+      interval: 10s
+      retries: 10
+    restart: always
+    environment:
+      - PGDATABASE=db
+      - PGUSER=postgres
+      - PGPASSWORD=postgres
+      - PGCONNECT_TIMEOUT=60
+      - PGHOST=localhost
+    volumes:
+      - ./pgconf:/docker-entrypoint-initdb.d/
+    ports:
+      - 5400:5432
