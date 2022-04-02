@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+export PGPASSWORD=$PGPASSWORD;
+psql -v ON_ERROR_STOP=1 -U "$PGUSER" -d "$PGDATABASE" -h "$PGHOST" -a -f table.sql
