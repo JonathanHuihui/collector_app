@@ -13,12 +13,19 @@ services:
       retries: 10
     restart: always
     environment:
-      - PGDATABASE=db
-      - PGUSER=postgres
+      - PGHOST=/tmp # Apparently very important for accessing from pgadmin
+      - PG_USER=postgres
+      - PG_PASSWORD=postgres
+      - PG_DATABASE=db
+      - PG_MODE=primary
+      - PG_PRIMARY_PORT=5432
+      - PG_PRIMARY_USER=postgres
+      - PG_PRIMARY_PASSWORD=postgres
+      - PG_ROOT_PASSWORD=postgres
       - PGPASSWORD=postgres
       - PGCONNECT_TIMEOUT=60
-      - PGHOST=localhost
+      - MODE=postgres
     volumes:
-      - ./pgconf:/docker-entrypoint-initdb.d/
+      - ./postgres/pgconf/:/pgconf
     ports:
-      - 5400:5432
+      - "5432:5432"
