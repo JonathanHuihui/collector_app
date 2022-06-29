@@ -6,6 +6,12 @@ services:
     networks:
       - app_net
 
+  package:
+    build: ./package
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+
   db:
     build: ./postgres
     healthcheck:

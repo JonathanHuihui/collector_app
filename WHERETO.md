@@ -29,3 +29,8 @@ https://access.crunchydata.com/documentation/pgadmin4/1.5/connect_error.html
 ## Loading Spatial Data
 https://postgis.net/workshops/postgis-intro/loading_data.html
 
+### SNSCRAPE 
+## Video
+https://www.youtube.com/watch?v=jOqLX_az_Tg
+
+
