@@ -1,0 +1,16 @@
+#!/bin/bash
+# netcat wait for database to be actually active
+
+RETRIES=90
+until $(nc -z $DBHOST $DBPORT)
+do 
+    echo "container is sleeping, ${RETRIES} attempts left."
+    sleep 1
+    if [ "$RETRIES" -lt 1 ]; then
+        echo "Retries limit exceeded, exiting."
+        exit 1
+    fi
+done
+
+tail -f /dev/null
+
