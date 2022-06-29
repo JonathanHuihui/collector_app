@@ -9,6 +9,9 @@ https://www.python.org/downloads/
 https://www.postgresql.org/docs/current/libpq-envars.html
 ## Run psql command line argument with file:
 https://stackoverflow.com/questions/9736085/run-a-postgresql-sql-file-using-command-line-arguments
+## PSQL CLI arguments
+https://www.postgresql.org/docs/current/app-psql.html
+
 
 ### Docker Resources
 ## Docker & Postgres:
@@ -19,6 +22,10 @@ https://github.com/CrunchyData/crunchy-containers/blob/master/examples/docker/sw
 ### Crunchydate Resources
 ## Crunchy Environment Variables:
 https://access.crunchydata.com/documentation/crunchy-postgres-containers/2.3.0/container-specifications/crunchy-postgres/
+## Connection Errors
+https://access.crunchydata.com/documentation/pgadmin4/1.5/connect_error.html
 
-
+### PostGIS Resources
+## Loading Spatial Data
+https://postgis.net/workshops/postgis-intro/loading_data.html
 

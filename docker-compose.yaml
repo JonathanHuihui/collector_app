@@ -3,6 +3,8 @@ version: '3.7'
 services:
   collector:
     build: ./collector
+    networks:
+      - app_net
 
   db:
     build: ./postgres
@@ -25,7 +27,14 @@ services:
       - PGPASSWORD=postgres
       - PGCONNECT_TIMEOUT=60
       - MODE=postgres
+      - MAX_CONNECTIONS=10
+      - MAX_WAL_SENDERS=5
     volumes:
       - ./postgres/pgconf/:/pgconf
     ports:
       - "5432:5432"
+    networks:
+      - app_net
+
+networks:
+  app_net:
